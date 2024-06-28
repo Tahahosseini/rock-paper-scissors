@@ -33,3 +33,21 @@ function getPlayerChoice() {
     else return 'Unknown input'
 }
 
+
+// create two variables with the value of 0
+let humanScore = 0
+let computerScore = 0
+
+
+// Step 3: the play round function
+function playRound(playerChoice, computerChoice) {
+    if (playerChoice.toLowerCase() === paper && computerChoice === rock) {
+        console.log('Paper beats rock! you won this round!')
+        humanScore++
+    }
+}
+
+const playerSelection = getPlayerChoice();
+const computerSelection = getComputerChoice();
+
+playRound(playerSelection, computerSelection);
