@@ -35,36 +35,33 @@ function playRound(playerChoice, computerChoice) {
     if ((playerChoice.toLowerCase() === paper && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === scissors)
         || (playerChoice.toLowerCase() === scissors && computerChoice === paper)) {
-        console.log(computerChoice)
+        console.log('I choose ' + computerChoice)
         console.log('good job! you won this round!')
         humanScore++
     }
     if ((playerChoice.toLowerCase() === paper && computerChoice === scissors)
         || (playerChoice.toLowerCase() === scissors && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === paper)) {
-        console.log(computerChoice)
+        console.log('I choose ' + computerChoice)
         console.log('you lost! try again.')
         computerScore++
     }
     if ((playerChoice.toLowerCase() === paper && computerChoice === paper)
         || (playerChoice.toLowerCase() === rock && computerChoice === rock)
         || (playerChoice.toLowerCase() === scissors && computerChoice === scissors)) {
-        console.log(computerChoice)
+        console.log('I choose' + computerChoice + ' too!')
         console.log('Same choice! draw!')
     }
 
 }
 
-const playerSelection = getPlayerChoice();
-const computerSelection = getComputerChoice();
-
-
 // Step 6: write the logic to play the entire game
+
 function playGame() {
     let round = 1
     while (round <= 5) {
         round++
-        playRound(playerSelection, computerSelection);
+        playRound(getPlayerChoice(), getComputerChoice())
     }
 }
 
