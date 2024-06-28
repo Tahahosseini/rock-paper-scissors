@@ -32,6 +32,8 @@ let computerScore = 0
 
 // Step 3: write the logic to play a single round
 function playRound(playerChoice, computerChoice) {
+
+    // winning round
     if ((playerChoice.toLowerCase() === paper && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === scissors)
         || (playerChoice.toLowerCase() === scissors && computerChoice === paper)) {
@@ -39,6 +41,7 @@ function playRound(playerChoice, computerChoice) {
         console.log('good job! you won this round!')
         humanScore++
     }
+    // losing round
     if ((playerChoice.toLowerCase() === paper && computerChoice === scissors)
         || (playerChoice.toLowerCase() === scissors && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === paper)) {
@@ -46,6 +49,7 @@ function playRound(playerChoice, computerChoice) {
         console.log('you lost! try again.')
         computerScore++
     }
+    // draw round
     if ((playerChoice.toLowerCase() === paper && computerChoice === paper)
         || (playerChoice.toLowerCase() === rock && computerChoice === rock)
         || (playerChoice.toLowerCase() === scissors && computerChoice === scissors)) {
@@ -58,12 +62,14 @@ function playRound(playerChoice, computerChoice) {
 // Step 6: write the logic to play the entire game
 
 function playGame() {
+    // loop that plays for 5 rounds
     let round = 1
     while (round <= 5) {
         round++
         playRound(getPlayerChoice(), getComputerChoice())
     }
 
+    // score keeping
     if (humanScore > computerScore) {
         console.log('Congrats! you won the whole game! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
     } else if (humanScore === computerScore) {
