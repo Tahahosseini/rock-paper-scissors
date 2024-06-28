@@ -1,6 +1,4 @@
-// Step 1: the computer's choice
-
-//create a function which randomly returns one of the options
+// Step 1: write the logic to get the computer's choice
 
 let rock = 'rock'
 let paper = 'paper'
@@ -17,7 +15,7 @@ function getComputerChoice() {
     else return scissors
 }
 
-// Step 2: the player's choice
+// Step 2: write the logic to get the player's choice
 
 //create a function that gets the player's input and returns it
 
@@ -39,7 +37,7 @@ let humanScore = 0
 let computerScore = 0
 
 
-// Step 3: the play round function
+// Step 3: write the logic to play a single round
 function playRound(playerChoice, computerChoice) {
     if ((playerChoice.toLowerCase() === paper && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === scissors)
@@ -65,3 +63,4 @@ const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
 playRound(playerSelection, computerSelection);
+
