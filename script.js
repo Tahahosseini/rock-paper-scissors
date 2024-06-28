@@ -41,10 +41,24 @@ let computerScore = 0
 
 // Step 3: the play round function
 function playRound(playerChoice, computerChoice) {
-    if (playerChoice.toLowerCase() === paper && computerChoice === rock) {
-        console.log('Paper beats rock! you won this round!')
+    if ((playerChoice.toLowerCase() === paper && computerChoice === rock)
+        || (playerChoice.toLowerCase() === rock && computerChoice === scissors)
+        || (playerChoice.toLowerCase() === scissors && computerChoice === paper)) {
+        console.log('good job! you won this round!')
         humanScore++
     }
+    if ((playerChoice.toLowerCase() === paper && computerChoice === scissors)
+        || (playerChoice.toLowerCase() === scissors && computerChoice === rock)
+        || (playerChoice.toLowerCase() === rock && computerChoice === paper)) {
+        console.log('you lost! try again.')
+        computerScore++
+    }
+    if ((playerChoice.toLowerCase() === paper && computerChoice === paper)
+        || (playerChoice.toLowerCase() === rock && computerChoice === rock)
+        || (playerChoice.toLowerCase() === scissors && computerChoice === scissors)) {
+        console.log('Same choice! draw!')
+    }
+
 }
 
 const playerSelection = getPlayerChoice();
