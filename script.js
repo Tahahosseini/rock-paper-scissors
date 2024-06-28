@@ -63,6 +63,13 @@ function playGame() {
         round++
         playRound(getPlayerChoice(), getComputerChoice())
     }
+
+    if (humanScore > computerScore) {
+        console.log('Congrats! you won the whole game! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
+    } else if (humanScore === computerScore) {
+        console.log('We are evenly matched! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
+    }
+    else console.log('Unlucky! you lost this game! maybe try again? ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
 }
 
 playGame()
