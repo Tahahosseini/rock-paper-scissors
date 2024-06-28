@@ -16,3 +16,20 @@ function getComputerChoice() {
     }
     else return scissors
 }
+
+// Step 2: the player's choice
+
+//create a function that gets the player's input and returns it
+
+function getPlayerChoice() {
+    let playerInput = prompt('Choose "Rock, Paper or scissors"')
+
+    if (playerInput == rock || playerInput == paper || playerInput == scissors) {
+        return playerInput
+    }
+    else if (playerInput == 'rock' || playerInput == 'paper' || playerInput == 'scissors') {
+        return playerInput
+    }
+    else return 'Unknown input'
+}
+
