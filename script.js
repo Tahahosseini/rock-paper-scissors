@@ -21,14 +21,7 @@ function getComputerChoice() {
 
 function getPlayerChoice() {
     let playerInput = prompt('Choose "Rock, Paper or scissors"')
-
-    if (playerInput == rock || playerInput == paper || playerInput == scissors) {
-        return playerInput
-    }
-    else if (playerInput == 'rock' || playerInput == 'paper' || playerInput == 'scissors') {
-        return playerInput
-    }
-    else return 'Unknown input'
+    return playerInput.toLowerCase()
 }
 
 
