@@ -55,5 +55,12 @@ function playRound(playerChoice, computerChoice) {
 const playerSelection = getPlayerChoice();
 const computerSelection = getComputerChoice();
 
-playRound(playerSelection, computerSelection);
 
+// Step 6: write the logic to play the entire game
+function playGame() {
+    let round = 1
+    while (round <= 5) {
+        round++
+        playRound(playerSelection, computerSelection);
+    }
+}
