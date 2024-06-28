@@ -2,9 +2,9 @@
 
 //create a function which randomly returns one of the options
 
-let rock = 'Rock'
-let paper = 'Paper'
-let scissors = 'Scissors'
+let rock = 'rock'
+let paper = 'paper'
+let scissors = 'scissors'
 
 function getComputerChoice() {
     let choice = Math.random();
