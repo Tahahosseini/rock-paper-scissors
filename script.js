@@ -37,24 +37,38 @@ function playRound(playerChoice, computerChoice) {
     if ((playerChoice.toLowerCase() === paper && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === scissors)
         || (playerChoice.toLowerCase() === scissors && computerChoice === paper)) {
-        console.log('I choose ' + computerChoice)
-        console.log('good job! you won this round!')
-        humanScore++
+        ++humanScore
+
+        let choice = document.querySelector(".choice")
+        choice.textContent = `I choose ${computerChoice}, Good job! You won this round!`
+
+        let score = document.querySelector(".scores")
+        score.textContent = `Your Score: ${humanScore} My Score: ${computerScore}`
+
+
     }
     // losing round
     if ((playerChoice.toLowerCase() === paper && computerChoice === scissors)
         || (playerChoice.toLowerCase() === scissors && computerChoice === rock)
         || (playerChoice.toLowerCase() === rock && computerChoice === paper)) {
-        console.log('I choose ' + computerChoice)
-        console.log('you lost! try again.')
         computerScore++
+
+        let choice = document.querySelector(".choice")
+        choice.textContent = `I choose ${computerChoice}, You lost! try again.`
+
+        let score = document.querySelector(".scores")
+        score.textContent = `Your Score: ${humanScore} My Score: ${computerScore}`
     }
     // draw round
     if ((playerChoice.toLowerCase() === paper && computerChoice === paper)
         || (playerChoice.toLowerCase() === rock && computerChoice === rock)
         || (playerChoice.toLowerCase() === scissors && computerChoice === scissors)) {
-        console.log('I choose ' + computerChoice + ' too!')
-        console.log('Same choice! draw!')
+
+        let choice = document.querySelector(".choice")
+        choice.textContent = `I choose ${computerChoice}, Same choice! draw!`
+
+        let score = document.querySelector(".scores")
+        score.textContent = `Your Score: ${humanScore} My Score: ${computerScore}`
     }
 
 }
