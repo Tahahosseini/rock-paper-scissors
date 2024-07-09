@@ -69,6 +69,7 @@ if (humanScore > computerScore) {
 else console.log('Unlucky! you lost this game! maybe try again? ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
 
 
+
 const btn = document.querySelectorAll(".selection")
 const btnRock = document.querySelector(".rock")
 const btnPaper = document.querySelector(".paper")
@@ -77,14 +78,30 @@ const btnScissors = document.querySelector(".scissors")
 
 btn.forEach((btn) => {
     btn.addEventListener("click", (e) => {
-        if (e.target === btnRock) {
-            playRound(rock, getComputerChoice())
-        }
-        if (e.target === btnPaper) {
-            playRound(paper, getComputerChoice())
-        }
-        if (e.target === btnScissors) {
-            playRound(scissors, getComputerChoice())
+        switch (e.target) {
+            case btnRock:
+                playRound(rock, getComputerChoice())
+                break;
+
+            case btnPaper:
+                playRound(paper, getComputerChoice())
+                break;
+
+            case btnScissors:
+                playRound(scissors, getComputerChoice())
+                break;
         }
     })
 })
+
+
+
+// if (e.target === btnRock) {
+//     playRound(rock, getComputerChoice())
+// }
+// if (e.target === btnPaper) {
+//     playRound(paper, getComputerChoice())
+// }
+// if (e.target === btnScissors) {
+//     playRound(scissors, getComputerChoice())
+// }
