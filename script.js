@@ -70,9 +70,9 @@ else console.log('Unlucky! you lost this game! maybe try again? ' + 'Your Score:
 
 
 const btn = document.querySelectorAll(".selection")
-let btnRock = document.querySelector(".rock")
-let btnPaper = document.querySelector(".paper")
-let btnScissors = document.querySelector(".scissors")
+const btnRock = document.querySelector(".rock")
+const btnPaper = document.querySelector(".paper")
+const btnScissors = document.querySelector(".scissors")
 
 
 btn.forEach((btn) => {
