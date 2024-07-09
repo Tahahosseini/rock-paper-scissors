@@ -53,29 +53,38 @@ function playRound(playerChoice, computerChoice) {
     if ((playerChoice.toLowerCase() === paper && computerChoice === paper)
         || (playerChoice.toLowerCase() === rock && computerChoice === rock)
         || (playerChoice.toLowerCase() === scissors && computerChoice === scissors)) {
-        console.log('I choose' + computerChoice + ' too!')
+        console.log('I choose ' + computerChoice + ' too!')
         console.log('Same choice! draw!')
     }
 
 }
 
-// Step 6: write the logic to play the entire game
 
-function playGame() {
-    // loop that plays for 5 rounds
-    let round = 1
-    while (round <= 5) {
-        round++
-        playRound(getPlayerChoice(), getComputerChoice())
-    }
-
-    // score keeping
-    if (humanScore > computerScore) {
-        console.log('Congrats! you won the whole game! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
-    } else if (humanScore === computerScore) {
-        console.log('We are evenly matched! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
-    }
-    else console.log('Unlucky! you lost this game! maybe try again? ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
+// score keeping
+if (humanScore > computerScore) {
+    console.log('Congrats! you won the whole game! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
+} else if (humanScore === computerScore) {
+    console.log('We are evenly matched! ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
 }
+else console.log('Unlucky! you lost this game! maybe try again? ' + 'Your Score: ' + humanScore + ' My Score: ' + computerScore)
 
-playGame()
+
+const btn = document.querySelectorAll(".selection")
+let btnRock = document.querySelector(".rock")
+let btnPaper = document.querySelector(".paper")
+let btnScissors = document.querySelector(".scissors")
+
+
+btn.forEach((btn) => {
+    btn.addEventListener("click", (e) => {
+        if (e.target === btnRock) {
+            playRound(rock, getComputerChoice())
+        }
+        if (e.target === btnPaper) {
+            playRound(paper, getComputerChoice())
+        }
+        if (e.target === btnScissors) {
+            playRound(scissors, getComputerChoice())
+        }
+    })
+})
