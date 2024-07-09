@@ -118,7 +118,10 @@ btn.forEach((btn) => {
     })
 })
 
-// Note to self: the hardest part of this project for me was the winner announcement after 5 rounds.
+
+
+// NOTE TO SELF
+// the hardest part of this project for me was the winner announcement after 5 rounds.
 // I tried everything but it didn't work. until I wrote how the program worked step by step in plain english for myself.
 // The problem was that the text which announced the winner was stuck at the draw text: "We are evenly matched!".
 // I realized the function which returns the results string works fine and is updated each time the player clicks a button, and only the text stays the same.
